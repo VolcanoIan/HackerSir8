@@ -23,7 +23,7 @@ Taichung_people = []
 Taichung_man = []
 Taichung_woman = []
 
-for i in range(0,14):
+for i in range(0,15):
     str = Class_1[i]
     if str[0:1] == "B":
         Taichung_people.append(Class_1[i])
@@ -32,7 +32,7 @@ for i in range(0,14):
             Taichung_man.append(Class_1[i])
         elif str[1:2] == "2":
             Taichung_woman.append(Class_1[i])
-            
+
 print(Taichung_people)
 print(Taichung_man)
 print(Taichung_woman)

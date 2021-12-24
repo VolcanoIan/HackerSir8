@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Caeser Decrypt</title>
+		<script language="JavaScript">
+			function decrypt() {
+				let cipher = String(document.getElementById("cipher").value);
+				let key = parseInt(document.getElementById("key").value, 10);
+				let plain = cipher.split('').map(ch => {
+					let code = ch.charCodeAt(0);
+					let base = ((ch == ch.toLowerCase()) ? 'a' : 'A').charCodeAt(0);
+					return String.fromCharCode(((code - base - key) + 26) % 26 + base);
+				}).join('');
+				document.getElementById("plain").textContent = plain;
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Caeser Decrypt</h1>
+			<span>Enter your cipher:</span>
+			<input type="text" id="cipher">
+			<br>
+			<span>Enter the key:</span>
+			<input type="number" id="key">
+			<br>
+			<button type="button" onclick="decrypt()" >DECRYPT</button>
+			<br>
+			<span>The PLAIN text is:</span>
+			<span id="plain"></span>
+			<br>
+		</div>	
+	</body>
+</html>
